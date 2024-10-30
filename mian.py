@@ -1,30 +1,24 @@
-#Escriba un programa que reciba como entrada dos números, y los muestre ordenados de menor a mayor:
+#Escriba un programa que determine si un caracter ingresado es letra, número, o ninguno de los dos. En caso que sea letra, determine si es mayúscula o minúscula.
 
-#Ingrese numero: 51
-#Ingrese numero: 24
-#24 51
-#A continuación, escriba otro programa que haga lo mismo con tres números:
+#Ingrese caracter: 9
+#Es numero.
+#Ingrese caracter: A
+#Es letra mayúscula.
+#Ingrese caracter: f
+#Es letra minúscula.
+#Ingrese caracter: #
+#No es letra ni número.
 
-#Ingrese numero: 8
-#Ingrese numero: 1
-#Ingrese numero: 4
-#1 4 8
-#Finalmente, escriba un tercer programa que ordene cuatro números:
+character = input("Ingrese carácter: ")
 
-#Ingrese numero: 7
-#Ingrese numero: 0
-#Ingrese numero: 6
-#Ingrese numero: 1
-#0 1 6 7
-#
-#Hay más de una manera de resolver cada ejercicio.
-
-number1 = int(input("Enter number: "))
-number2 = int(input("Enter number: "))
-number3 = int(input("Enter number: "))
-number4 = int(input("Enter number: "))
-
-numbers = [number1, number2, number3, number4]
-
-numbers.sort()
-print(*numbers)
+if character.isalpha():
+    if character.isupper():
+        print("It is a capital letter.")
+    else:
+        print("It is a lowercase letter.")
+# Check if the character is a number
+elif character.isdigit():
+    print("It's a number.")
+# If it is not a letter or number
+else:
+    print("Not a letter or number.")
