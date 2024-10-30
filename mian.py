@@ -1,29 +1,27 @@
-#División
-#Escriba un programa que pida dos números enteros y que calcule la división, indicando si la división es exacta o no.
+#Escriba un programa que pida al usuario dos palabras, y que indique cuál de ellas es la más larga y por cuántas letras lo es.
 
-#Dividendo: 14
-#Divisor: 5
+#Palabra 1: edificio
+#Palabra 2: tren
+#La palabra edificio tiene 4 letras mas que tren.
+#Palabra 1: sol
+#Palabra 2: paralelepipedo
+#La palabra paralelepipedo tiene 11 letras mas que sol
+#Palabra 1: plancha
+#Palabra 2: lapices
+#Las dos palabras tienen el mismo largo
 
-#La división no es exacta.
-#Cociente: 2
-#Resto: 4
-#Dividendo: 100
-#Divisor: 10
 
-#La división es exacta.
-#Cociente: 10
-#Resto: 0
+word1 = input("Word 1: ")
+word2 = input("Word 2: ")
 
-dividing= int(input("dividing: "))
-divider= int(input("divider: "))
+longitud1 = len(word1)
+longitud2 = len(word2)
 
-cociente= dividing//divider
-resto= dividing%divider
-
-if resto==0:
-    print("The division is exact:")
+if longitud1 > longitud2:
+    difference = longitud1 - longitud2
+    print(f"The word {word1} has {difference} more letters than {word2}.")
+elif longitud2 > longitud1:
+    difference = longitud2 - longitud1
+    print(f"The word {word2} has {difference} more letters than {word1}.")
 else:
-    print("The division is not exact:")
-
-print(f"Cociente:", {cociente})
-print(f"Resto:", {resto})
+    print("The two words are the same length.")
