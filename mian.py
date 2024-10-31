@@ -1,17 +1,15 @@
-print ("Exercise 9 TENNIS SET")
+print ("Exercise 10 TRIANGLES")
 
-p1 = int(input("games won by A: "))
-p2 = int(input("games won by B: "))
+t1 = float(input("Insert A: "))
+t2 = float(input("Insert B: "))
+t3 = float(input("Insert C: "))
 
-#Conocer si es invalido
-if p1 > 7 or p2 > 7 or ( p1==7 and p2 < 5) or (p2==7 and p1 < 5) or abs(p1-p2) > 2:
-    print ("Invalid")
-#Conocer si aun no finaliza
-elif (p1 <= 6 and p2 <= 6 ) or (p1==6 and p2==6):
-    print ("It's not over yet")
-#Conocer si gana P1
-elif (p1 == 6 and p2 <= 4) or (p1 == 7 and p2 == 5) or (p1 == 7 and p2 == 6):
-    print ("Won A")
-
-elif (p2 == 6 and p1 <= 4) or (p2 == 7 and p1 == 5) or (p2 == 7 and p1 == 6):
-    print ("Won B")
+if t1 + t2 > t3 and t1 + t3 > t2 and t2 + t3 > t1:
+    if  t1 == t2 == t3:
+        print ("El triangulo equilatero")
+    elif t1 == t2 or t1 == t3 or t2 == t3:
+        print ("El triangulo isosceles")
+    else:
+        print ("El triangulo es escaleno")
+else:
+    print ("No es un triangulo valido")
