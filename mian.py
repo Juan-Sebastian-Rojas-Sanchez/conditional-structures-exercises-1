@@ -1,15 +1,20 @@
-print ("Exercise 10 TRIANGLES")
+print ("Exercise 11 Body mass index")
 
-t1 = float(input("Insert A: "))
-t2 = float(input("Insert B: "))
-t3 = float(input("Insert C: "))
+stature  = float(input("Insert stature: "))
+Weight   = float(input("Insert weight: "))
+age      = float(input("Insert age: "))
 
-if t1 + t2 > t3 and t1 + t3 > t2 and t2 + t3 > t1:
-    if  t1 == t2 == t3:
-        print ("El triangulo equilatero")
-    elif t1 == t2 or t1 == t3 or t2 == t3:
-        print ("El triangulo isosceles")
+imc  = Weight / (stature**2)
+
+if age < 45:
+    if imc < 22.0:
+        risk = "low"
     else:
-        print ("El triangulo es escaleno")
+        risk = "medium"
 else:
-    print ("No es un triangulo valido")
+    if imc < 22.0:
+        risk = "medium"
+    else:
+        risk = "high"
+
+print(f"Your risk of coronary heart disease is {risk}.")
