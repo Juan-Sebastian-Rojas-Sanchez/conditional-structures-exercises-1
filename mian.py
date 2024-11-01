@@ -1,39 +1,17 @@
-def dibujar_rectangulo():
-    altura = int(input("Altura: "))
-    ancho = int(input("Ancho: "))
-    for _ in range(altura):
-        print('*' * ancho)
 
-def dibujar_triangulo():
-    altura = int(input("Altura: "))
-    for i in range(1, altura + 1):
-        print('*' * i)
-
-def dibujar_hexagono():
-    lado = int(input("Lado: "))
-    # Parte superior del hexágono
-    for i in range(lado):
-        print(' ' * (lado - i - 1) + '*' * (2 * i + 2))
-    # Parte inferior del hexágono
-    for i in range(lado - 1):
-        print(' ' * (i + 1) + '*' * (2 * (lado - i - 1) + 2))
+def estimar_pi(n):
+    pi_est = 0  # Inicializa la estimación de pi
+    for k in range(n):
+        # Calcula el término correspondiente de la serie
+        term = ((-1) ** k) / (2 * k + 1)
+        pi_est += term  # Suma el término a la estimación de pi
+    pi_est *= 4  # Multiplica por 4 para obtener π
+    return pi_est
 
 def main():
-    print("¿Qué figura deseas dibujar?")
-    print("1. Rectángulo")
-    print("2. Triángulo")
-    print("3. Hexágono")
-    
-    opcion = int(input("Selecciona una opción (1, 2 o 3): "))
-    
-    if opcion == 1:
-        dibujar_rectangulo()
-    elif opcion == 2:
-        dibujar_triangulo()
-    elif opcion == 3:
-        dibujar_hexagono()
-    else:
-        print("Opción no válida. Por favor, elige 1, 2 o 3.")
+    n = int(input("Ingrese el número de términos (n): "))
+    pi_estimado = estimar_pi(n)
+    print(pi_estimado)
 
 # Ejecutar el programa
 main()
