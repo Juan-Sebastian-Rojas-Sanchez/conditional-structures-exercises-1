@@ -1,17 +1,29 @@
 
-def estimar_pi(n):
-    pi_est = 0  # Inicializa la estimación de pi
-    for k in range(n):
-        # Calcula el término correspondiente de la serie
-        term = ((-1) ** k) / (2 * k + 1)
-        pi_est += term  # Suma el término a la estimación de pi
-    pi_est *= 4  # Multiplica por 4 para obtener π
-    return pi_est
+def factorial(n):
+    """Calcula el factorial de n de manera recursiva."""
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+def estimar_e():
+    """Calcula una aproximación del número de Euler (e) usando la suma de factoriales."""
+    suma = 0.0
+    n = 10  # Comenzamos desde 10!
+    
+    while True:
+        termino_actual = factorial(n)
+        suma += termino_actual
+        n += 1
+        # Calcular el siguiente término para comprobar la diferencia
+        termino_siguiente = factorial(n)
+        
+        # Verificar la diferencia entre los términos
+        if abs(termino_siguiente - termino_actual) < 0.0001:
+            break
+            
+    return suma
 
 def main():
-    n = int(input("Ingrese el número de términos (n): "))
-    pi_estimado = estimar_pi(n)
-    print(pi_estimado)
-
-# Ejecutar el programa
-main()
+    e_estimado = estimar_e()
+ print(f"Valor aproximado de e: {e_estimado}")
