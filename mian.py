@@ -1,13 +1,21 @@
-# Set the size of the multiplication table
-size = 10
+#Tiempo de viaje
+def calcular_tiempo_viaje():
+    while True:
+        total_minutos = 0
+        
+        while True:
+            # Solicitar la duración del tramo
+            duracion_tramo = int(input("Duracion tramo: "))
+            if duracion_tramo == 0:
+                break  # Salir del bucle si se ingresa 0
+            total_minutos += duracion_tramo
+        
+        # Calcular horas y minutos
+        horas = total_minutos // 60
+        minutos = total_minutos % 60
+        
+        # Mostrar el resultado
+        print(f"Tiempo total de viaje: {horas}:{minutos:02d} horas")
 
-# Print the header
-for i in range(1, size + 1):
-    print(f"{i:2}", end="  ")
-print()  # New line for header
-
-# Print each row of the multiplication table
-for i in range(1, size + 1):
-    for j in range(1, size + 1):
-        print(f"{i * j:2}", end="  ")  # Multiply and format the output
-    print()  # New line for the next row
+# Llamar a la función
+calcular_tiempo_viaje()
