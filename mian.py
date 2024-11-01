@@ -1,14 +1,13 @@
-#Suma entre números
-# Get user input
-num1 = int(input("Enter the first number: "))
-num2 = int(input("Enter the second number: "))
+# Set the size of the multiplication table
+size = 10
 
-# Ensure num1 is less than num2
-if num1 > num2:
-    num1, num2 = num2, num1
+# Print the header
+for i in range(1, size + 1):
+    print(f"{i:2}", end="  ")
+print()  # New line for header
 
-# Calculate the sum of numbers between num1 and num2
-total_sum = sum(range(num1 + 1, num2))
-
-# Print the result
-print(f"The sum is {total_sum}")
+# Print each row of the multiplication table
+for i in range(1, size + 1):
+    for j in range(1, size + 1):
+        print(f"{i * j:2}", end="  ")  # Multiply and format the output
+    print()  # New line for the next row
